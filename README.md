@@ -28,9 +28,9 @@
 - [📝 License](#license)
 
 
-# 📖 My-Blog_App <a name="about-project"></a>
+# 📖 Blog_App <a name="about-project"></a>
 
-> The Blog app is a classic example of a blog website. It's a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liks to posts of their intrest.
+> The Blog app is a classic example of a blog website. It's a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and links to posts of their interest.
 
 
 ## 🛠 Built With <a name="built-with"></a>
