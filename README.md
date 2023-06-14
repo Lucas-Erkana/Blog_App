@@ -28,9 +28,9 @@
 - [📝 License](#license)
 
 
-# 📖 My-Blog-App <a name="about-project"></a>
+# 📖 Blog_App <a name="about-project"></a>
 
-> The Blog app is a classic example of a blog website. It's a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liks to posts of their intrest.
+> The Blog app is a classic example of a blog website. It's a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and likes to posts of their interest.
 
 
 ## 🛠 Built With <a name="built-with"></a>
@@ -78,7 +78,7 @@ In order to run this project you need:
 Clone this repository by using the command line to your desired folder:  
 
 ```sh
-git clone https://github.com/Lucash2022/Blog-App.git
+git clone https://github.com/Lucash2022/Blog_App.git
 
 cd Blog_App
 ```
@@ -115,7 +115,7 @@ rails server
 - GitHub: [@Lucash2022](https://github.com/Lucash2022)
 - Twitter: [@Lucas_David_22](https://twitter.com/@Lucas_David_22)
 - LinkedIn: [Lucas Erkana](https://www.linkedin.com/in/lucas-erkana/)
-- Frontend Mentor - [@PLucash2022](https://www.frontendmentor.io/profile/Lucash2022)
+- Frontend Mentor - [@Lucash2022](https://www.frontendmentor.io/profile/Lucash2022)
 
 
 ## 🔭 Future Features <a name="future-features"></a>
@@ -129,7 +129,7 @@ rails server
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Lucash2022/Blog-App/issues)
+Feel free to check the [issues page](https://github.com/Lucash2022/Blog_App/issues)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
