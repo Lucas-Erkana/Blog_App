@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: blog_app_development
+  database: Blog_App_development
   host: localhost
   port: 5432
   username: postgres
