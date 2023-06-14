@@ -1,114 +1,97 @@
-
-
-
-
-
 <a name="readme-top"></a>
+<h1> Blog App</h1>
+
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ](#faq)
-- [📝 License](#license)
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 Rails Blog App ](#-My-Blog-App-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [🚀 Live Demo ](#-live-demo-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Usage](#usage)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [❓ FAQ ](#-faq-)
+  - [📝 License ](#-license-)
 
+<!-- PROJECT DESCRIPTION -->
 
-# 📖 Blog_App <a name="about-project"></a>
+# 📖 Blog App <a name="about-project"></a>
 
-> The Blog app is a classic example of a blog website. It's a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and likes to posts of their interest.
-
+> The Blog app will be a classic example of a blog website. It is a Microverse project where they required me to create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
 ## 🛠 Built With <a name="built-with"></a>
-
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
-  <summary>Ruby on Rails</summary>
+  <summary>Ruby On Rails</summary>
   <ul>
-    <li><a href="https://ruby-doc.org/core-3.1.2/">Ruby</a></li>
-  </ul>
-    <ul>
-    <li><a href="https://ruby-doc.org/core-3.1.2/">Rails</a></li>
+    <li><a href="">Postgresql</a></li>
   </ul>
 </details>
 
+<!-- Features -->
+
 ### Key Features <a name="key-features"></a>
 
-- **Create blog plost**
-
-- **Comment on blog post**
-
-- **Display list of comments**
+- **Add User, Post, Like & Comment**
+- **List all User, Post, Like & Comment**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+
+<!-- GETTING STARTED -->
+
 ## 💻 Getting Started <a name="getting-started"></a>
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
 In order to run this project you need:
 
+- Mac or PC
 - Code Editor (Vs Code)
-
 - Terminal
-
 - Install ruby on your computer
-
 - Install rails on your computer
 
 ### Setup
 
-Clone this repository by using the command line to your desired folder:  
+Clone this repository to your desired folder:
 
 ```sh
-git clone https://github.com/Lucash2022/Blog_App.git
-
-cd Blog_App
+  cd your-folder
+  https://github.com/Lucash2022/Blog_App.git
 ```
 
 ### Install
 
 Install this project with:
 
-```sh
-cd Blog_App
- bundle install (install all dependencies)
-```
+- GitHub Actions
+- Linters
+  - Rubocop
+- Ruby On Rails
 
 ### Usage
 
-To run the project, execute the following command:
-
-```sh
-rails server
-```
-
-### Test
-
-```sh
-  rspec
-```
+- Run the app with `rails c` in the terminal from the root folder of the project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Authors <a name="authors"></a>
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
 
 👤 **Lucas Erkana**
 
@@ -117,35 +100,57 @@ rails server
 - LinkedIn: [Lucas Erkana](https://www.linkedin.com/in/lucas-erkana/)
 - Frontend Mentor - [@Lucash2022](https://www.frontendmentor.io/profile/Lucash2022)
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **Improve styles of the project**
+- [ ] **Add Views in App**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Lucash2022/Blog_App/issues)
-
+Feel free to check the [issues page](https://github.com/lucash2022/Blog-app/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- SUPPORT -->
 
 ## ⭐️ Show your support <a name="support"></a>
 
-Leave a star if you like the project.
+If you like this project, please leave a ⭐️
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for the project.
+I would like to thank Microverse for providing the reading materials that aided me during the project development
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FAQ (optional) -->
+
+## ❓ FAQ <a name="faq"></a>
+
+- **Can I use this code?**
+
+  - yes, it is open source. Feel free to fork it.
+
+- **Can I contribute to this project?**
+
+  - Contact me so I can add you as a collaborator. Alternatively you can leave an issue, it will be well appreciated.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 
