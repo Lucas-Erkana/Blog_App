@@ -87,6 +87,12 @@ Install this project with:
 
 - Run the app with `rails c` in the terminal from the root folder of the project.
 
+### Test
+
+```sh
+  rspec
+```
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
