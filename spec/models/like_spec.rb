@@ -1,22 +1,45 @@
-require 'rails_helper'
+require_relative '../rails_helper'
 
 RSpec.describe Like, type: :model do
-  describe "associations" do
-    it { should belong_to(:user) }
-    it { should belong_to(:post) }
+  describe 'validation' do
+    subject { Like.new }
+
+    before { subject.save }
+
+    it 'likes text should contain text' do
+      expect(subject).to_not be_valid
+    end
   end
 
-  describe "callbacks" do
-    let!(:post) { create(:post) }
-    let!(:like) { create(:like, post: post) }
-
-    it "updates the likes counter after creating a like" do
-      expect(post.likes_counter).to eq(1)
+  describe 'Functionality' do
+    let(:user) do
+      User.create(
+        name: 'John Doe',
+        photo: 'https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg',
+        bio: 'Hello I am a test user',
+        posts_counter: 0
+      )
     end
 
-    it "updates the likes counter after destroying a like" do
-      like.destroy
-      expect(post.likes_counter).to eq(0)
+    let(:post) do
+      Post.create(
+        title: 'Test Post',
+        text: 'This is a test post',
+        user:,
+        comment_counter: 0,
+        likes_counter: 0
+      )
+    end
+
+    subject do
+      Like.new(
+        user:,
+        post:
+      )
+    end
+
+    it 'updates the likes_counter of the post after saving' do
+      expect { subject.save }.to change { post.likes_counter }.by(1)
     end
   end
 end

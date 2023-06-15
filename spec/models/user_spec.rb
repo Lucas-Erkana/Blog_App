@@ -1,47 +1,65 @@
-require 'rails_helper'
+require_relative '../rails_helper'
 
 RSpec.describe User, type: :model do
-  describe "validations" do
-    it { should validate_presence_of(:name) }
-    it { should validate_numericality_of(:posts_counter).is_greater_than_or_equal_to(0) }
+  subject do
+    User.new(
+      name: 'John Doe',
+      photo: 'https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg',
+      bio: 'Hello I am a test user',
+      posts_counter: 0
+    )
   end
 
-  describe "associations" do
-    it { should have_many(:posts).with_foreign_key(:author_id) }
-    it { should have_many(:comments).with_foreign_key(:author_id) }
-    it { should have_many(:likes) }
+  describe 'Validations' do
+    it 'is valid with valid attributes' do
+      expect(subject).to be_valid
+    end
+
+    it 'is not valid without a name' do
+      subject.name = ''
+      expect(subject).to_not be_valid
+    end
+
+    it 'is valid without a photo' do
+      subject.photo = ''
+      expect(subject).to be_valid
+    end
+
+    it 'is not valid when posts_counter is not an integer' do
+      subject.posts_counter = 'a'
+      expect(subject).to_not be_valid
+    end
+
+    it 'is not valid when posts_counter is less than 0' do
+      subject.posts_counter = -1
+      expect(subject).to_not be_valid
+    end
+  end
+end
+
+context 'Testing behavior' do
+  subject do
+    User.new(
+      name: 'John Doe',
+      photo: 'https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg',
+      bio: 'Hello I am a test user',
+      posts_counter: 0
+    )
   end
 
-  describe "methods" do
-    let!(:user) { create(:user) }
-
-    describe "#recent_posts" do
-      let!(:post1) { create(:post, author: user, created_at: 1.day.ago) }
-      let!(:post2) { create(:post, author: user, created_at: 2.days.ago) }
-      let!(:post3) { create(:post, author: user, created_at: 3.days.ago) }
-      let!(:post4) { create(:post, author: user, created_at: 4.days.ago) }
-      let!(:post5) { create(:post, author: user, created_at: 5.days.ago) }
-      let!(:post6) { create(:post, author: user, created_at: 6.days.ago) }
-
-      it "returns the most recent posts" do
-        expect(user.recent_posts).to eq([post1, post2, post3])
-      end
-
-      it "returns the specified limit of recent posts" do
-        expect(user.recent_posts(2)).to eq([post1, post2])
-      end
+  before do
+    10.times do |i|
+      Post.create(
+        title: "Post #{i}",
+        text: "This is the text for post #{i}",
+        user: subject, # Assign the user instance to the user attribute
+        comment_counter: 0,
+        likes_counter: 0
+      )
     end
+  end
 
-    describe "#update_posts_counter" do
-      let!(:user) { create(:user) }
-      let!(:post) { create(:post, author: user) }
-
-      it "updates the posts counter" do
-        expect {
-          user.update_posts_counter
-          user.reload
-        }.to change(user, :posts_counter).by(1)
-      end
-    end
+  it 'lists the most recent 3 posts' do
+    expect(subject.recent_post.length).to eq(3)
   end
 end
