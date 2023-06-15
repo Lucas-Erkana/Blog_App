@@ -1,27 +1,22 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  describe 'associations' do
+  describe "associations" do
     it { should belong_to(:user) }
     it { should belong_to(:post) }
   end
 
-  describe 'callbacks' do
+  describe "callbacks" do
     let!(:post) { create(:post) }
-    let!(:like) { create(:like, post:) }
+    let!(:like) { create(:like, post: post) }
 
-    it 'updates the likes_counter after creating a like' do
-      expect do
-        create(:like, post:)
-        post.reload
-      end.to change(post, :likes_counter).by(1)
+    it "updates the likes counter after creating a like" do
+      expect(post.likes_counter).to eq(1)
     end
 
-    it 'updates the likes_counter after destroying a like' do
-      expect do
-        like.destroy
-        post.reload
-      end.to change(post, :likes_counter).by(-1)
+    it "updates the likes counter after destroying a like" do
+      like.destroy
+      expect(post.likes_counter).to eq(0)
     end
   end
 end

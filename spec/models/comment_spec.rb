@@ -1,23 +1,36 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  it "is valid with a post, author, and text" do
-    user = User.create(
-      name: 'John Doe',
-      photo: 'https://example.com/photo.jpg',
-      bio: 'Lorem ipsum dolor sit amet.',
-      posts_counter: 5
-    )
-    post = Post.create(
-      author: user,
-      title: 'Test Post',
-      text: 'Lorem ipsum dolor sit amet.',
-      comment_counter: 3,
-      likes_counter: 10
-    )
-    comment = Comment.new(
-      post: post,
-      author: user,
-      text: 'Test comment'
-    )
-    expect(comment).to
+  describe "validations" do
+    it { should validate_presence_of(:content) }
+  end
+
+  describe "associations" do
+    it { should belong_to(:post) }
+    it { should belong_to(:author).class_name('User') }
+  end
+
+  describe "callbacks" do
+    let!(:post) { create(:post) }
+    let!(:comment) { create(:comment, post: post) }
+
+    it "updates the comments counter after create" do
+      expect(post.comment_counter).to eq(1)
+    end
+
+    it "updates the comments counter after destroy" do
+      comment.destroy
+      expect(post.comment_counter).to eq(0)
+    end
+
+    it "updates the comments counter of the associated post" do
+      comment2 = create(:comment, post: post)
+      comment3 = create(:comment, post: post)
+
+      expect(post.comment_counter).to eq(3)
+
+      comment2.destroy
+      expect(post.comment_counter).to eq(2)
+    end
+  end
+end
