@@ -30,5 +30,4 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-# .gitignore
 node_modules/

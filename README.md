@@ -62,8 +62,8 @@ In order to run this project you need:
 - Mac or PC
 - Code Editor (Vs Code)
 - Terminal
-- Install ruby on your computer
-- Install rails on your computer
+- Install [ruby](https://www.ruby-lang.org/en/documentation/installation/) on your computer
+- Install [rails](https://www.tutorialspoint.com/ruby-on-rails/rails-installation.htm#) on your computer
 
 ### Setup
 
@@ -86,6 +86,12 @@ Install this project with:
 ### Usage
 
 - Run the app with `rails c` in the terminal from the root folder of the project.
+
+### Test
+
+```sh
+  rspec
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
