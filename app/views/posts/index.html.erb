@@ -1,0 +1,9 @@
+<h1>Here is a list of posts for a given user</h1>
+<% if @posts.exists? %>
+  <% @posts.each do |post| %>
+    <h3>Title: <%= post.title %></h3>
+    <p>Text: <%= post.text %></p>
+  <% end %>
+<% else %>
+  <p>No posts found.</p>
+<% end %>
