@@ -1,15 +1,187 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* {
+  background-color: azure;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+}
+
+h1 {
+  font-size: 30px;
+  line-height: 2rem;
+  text-align: center;
+  margin: 30px auto;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+main {
+  width: 90%;
+  min-height: 100vh;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.users-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.user-container {
+  display: flex;
+  gap: 15px;
+}
+
+.user-container,
+.post-container {
+  border-bottom: 1px solid gray;
+  padding-bottom: 20px;
+}
+
+.user-profile-pic {
+  width: 100px;
+  height: 100px;
+}
+
+.user-profile-pic img {
+  width: 100%;
+  height: 100%;
+}
+
+.user-info {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+.posts-counter,
+.coment-likes-data {
+  font-size: 15px;
+  font-weight: normal;
+  display: flex;
+  justify-content: end;
+  color: gray;
+}
+
+.btn-container {
+  display: flex;
+  align-items: center;
+}
+
+.btn-container a {
+  display: block;
+  text-decoration: underline;
+  color: blue;
+  font-size: 22px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+.back-link {
+  font-size: 18px;
+  text-decoration: underline;
+  color: blue;
+}
+
+.users-link {
+  font-size: 18px;
+  text-decoration: underline;
+  color: blue;
+}
+
+article.user-bio {
+  border: 1px solid gray;
+  margin: 20px 0 40px;
+  padding: 12px 10px;
+  text-align: left;
+}
+
+.user-bio h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.user-bio .bio {
+  font-size: 19px;
+}
+
+.post-container {
+  margin-bottom: 20px;
+}
+
+.post-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.post-details .details {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.btn-container.see-posts {
+  display: flex;
+  justify-content: center;
+}
+
+.user-container.posts {
+  margin-bottom: 20px;
+}
+
+h2.title {
+  font-size: 30px;
+}
+
+.user-name {
+  font-size: 19px;
+  margin-bottom: 10px;
+  color: rgb(210, 57, 57);
+}
+
+.post-body {
+  margin-top: 20px;
+}
+
+.post-body p {
+  line-height: 1.5;
+}
+
+.comments-container,
+.post-comments-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  border: 1px solid gray;
+  margin-top: 15px;
+}
+
+.post-comments-container li {
+  font-size: 18px;
+}
+
+.post-comments-container {
+  margin-bottom: 40px;
+}
+
+@media (min-width: 765px) {
+  main {
+    width: 70%;
+    min-height: 90vh;
+    margin: auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+}
