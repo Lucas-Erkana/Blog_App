@@ -4,9 +4,7 @@ class UsersController < ApplicationController
     @posts = @user.recent_post
   end
 
-
   def index
     @users = User.all
   end
 end
-
