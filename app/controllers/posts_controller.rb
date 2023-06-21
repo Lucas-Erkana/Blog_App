@@ -1,10 +1,16 @@
-class UsersController < ApplicationController
-  def show
-    @user = User.find(params[:id])
-    @posts = @user.recent_post
+class PostsController < ApplicationController
+  def index
+    @user = User.find(params[:user_id])
+    user_id = params[:user_id]
+    @posts = Post.where(user_id: user_id)
+    @comments = Comment.all
   end
 
-  def index
-    @users = User.all
+
+  def show
+    @post = Post.find(params[:id])
+    @user = User.find(params[:user_id])
+    @comments = Comment.where(post_id: params[:id])
   end
 end
+
