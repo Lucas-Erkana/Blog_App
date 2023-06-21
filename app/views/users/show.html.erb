@@ -1,2 +1,7 @@
 <h1>User details</h1>
-<h3>User ID: <%= @user.id %></h3>
+<h3 class="user-info">User ID: <%= @user.id %></h3>
+<div class="user-info">
+  <h3>Username: <%= @user.name %></h3>
+  <img src="<%= @user.photo %>" alt="User Photo" class="user-photo" />
+</div>
+<h3 class="user-info">Bio: <%= @user.bio %></h3>

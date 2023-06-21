@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+/* Reset default browser styles */
+
+/* Add these styles to your existing CSS */
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-info h3 {
+  margin-bottom: 5px;
+}
+
+.user-photo {
+  max-width: 50%;
+  height: auto;
+  margin-left: 20px;
+}
+
+/* Add your own custom styles below this line */

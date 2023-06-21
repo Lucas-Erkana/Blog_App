@@ -1,1 +1,10 @@
 <h1>List of all the users</h1>
+<% @users.order(:id).each do |user| %>
+  <div class="user">
+    <div class="user-info">
+      <h3>Username: <%= user.name %></h3>
+      <p>Bio: <%= user.bio %></p>
+    </div>
+    <img src="<%= user.photo %>" alt="User Photo" class="user-photo" />
+  </div>
+<% end %>
