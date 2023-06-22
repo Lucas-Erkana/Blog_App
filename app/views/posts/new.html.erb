@@ -1,0 +1,14 @@
+<main class="page" id="post-form-page" >
+    <h1>Create New Post</h1>
+    <%= form_with(model: @post, url:  user_create_post_path, method: :post, remote: false ) do |f| %>
+      <div class="post-inputs">
+        <%= f.label :title %>
+        <%= f.text_field :title, required: true, pattern: ".{5,}", title: "Title must be at least 5 characters", placeholder: "Enter Post Title"  %>
+      </div>
+      <div class="post-inputs">
+        <%= f.label :text  %>
+        <%= f.text_area :text, resize: "none", required: true, pattern: ".{5,}", title: "Please fill out this are", placeholder: "Enter Text"  %>
+      </div>
+        <%= f.submit "Create Post" %>
+    <% end %>
+  </main>

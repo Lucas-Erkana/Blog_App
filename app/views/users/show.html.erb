@@ -1,7 +1,6 @@
 <main id="user-index" class="page">
-  <%# Home, Users and Back button start %>
+  <%# Home Users, and Back buttons start %>
   <div id="user-page">
-      <div id="user-page">
     <div class="btn-container">
       <%= link_to "Home", "../../" %>
       <div class="back-link-container">
@@ -11,8 +10,12 @@
       <%= link_to "Users", users_path, class: "users-link" %>
     </div>
     </div>
-    <%# End of Home, Users and Back button button  %>
-    <%# user info start here %>
+  </div>
+  <%# End of Home, Users and Back buttons %>
+    <div class="btn-container">
+      <%= link_to "Create post", new_user_post_path(@user) %>
+    </div>
+    <%# user info start %>
     <div class="user-container">
       <div class="user-profile-pic">
         <img src="<%= @user.photo %>" alt="profile-picture">
@@ -27,28 +30,14 @@
       <div class="bio"><%= @user.bio %></div>
     </article>
     <%# end of user info %>
-    <%# posts start here%>
+    <%# posts start %>
     <article>
-      <% @posts.each do |post| %>
-        <%= link_to  user_post_path(@user, post) do %>
-          <div class="post-container">
-            <h3 class="post-title"><%= post.title %></h3>
-            <div class="post-details">
-              <p class="details"><%= post.text[0..100]... %></p>
-            </div>
-            <div class="comment-like-container">
-              <p class="coment-likes-data">
-                Comment: <%= post.comment_counter || 0 %>, Likes: <%= post.likes_counter || 0 %>
-              </p>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
+      <%= @posts.map { |post| render_post(@user, post) }.join.html_safe %>
     </article>
     <%# end of post %>
     <%# see all post button %>
     <div class="btn-container see-posts">
-        <%= link_to "See all posts", user_posts_path(@user) %>
+      <%= link_to "See all posts", user_posts_path(@user) %>
     </div>
     <%# end of see all button %>
   </div>

@@ -1,10 +1,9 @@
 <main id="post-index" class="page">
-  <%# Home, Users and Back buttons start %>
+  <div id="user-page">
+  <%# Home Users, and Back buttons start %>
   <div id="user-page">
     <div class="btn-container">
       <%= link_to "Home", "../../" %>
-
-
       <div class="back-link-container">
         <%= link_to "Back", :back, class: "back-link" %>
       </div>
@@ -12,7 +11,8 @@
       <%= link_to "Users", users_path, class: "users-link" %>
     </div>
     </div>
-    <%# End of Home, Users and Back buttons  %>
+  </div>
+  <%# End of Home, Users and Back buttons %>
     <div class="single-post-container">
       <%# user post start %>
       <article class="post-article">
@@ -29,18 +29,28 @@
           </div>
         </article>
         <%# End of user post %>
-        <%# Comments container start %>
-        <ul class="comments-container">
-          <% if @comments.any?  %>
-            <% @comments.each do |comment| %>
-              <li>
-                <p><%= User.find_by(id: comment.user_id).name %>: <%= comment.text %></p>
-              </li>
-            <% end %>
-          <% else %>
-            <li>No comments added yet...</li>
+        <div class="interaction">
+          <%= form_with(model: @like, url: user_post_likes_path(@user, @post), method: :post, remote: false) do |form| %>
+            <div class="add-coment-btn">
+              <%= form.submit "Like" %>
+            </div>
           <% end %>
+          <div class="btn-container">
+            <%= link_to "Add comment", new_user_post_comment_path(@user, @post) %>
+          </div>
+        </div>
+        <%# Comments container start %>
+        <%
+=begin%>
+        <div class="btn-container">
+          <%= link_to "Add comment", new_user_post_comment_path(@user, @post) %>
+        </div>
+        <%
+=end%>
+        <ul class="comments-container">
+          <%= render_all_comment(@comments)%>
         </ul>
         <%# End of Comments container  %>
       </div>
-    </main>
+    </div>
+  </main>
