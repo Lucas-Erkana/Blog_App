@@ -11,14 +11,14 @@ class User < ApplicationRecord
   end
 
   def user_has_liked(post_id)
-    likes.exists?(post_id: post_id)
+    likes.exists?(post_id:)
   end
 
   def remove_user_like(post_id)
-    likes.find_by(post_id: post_id).destroy
+    likes.find_by(post_id:).destroy
   end
 
   def add_user_like(post_id)
-    likes.create(post_id: post_id)
+    likes.create(post_id:)
   end
 end

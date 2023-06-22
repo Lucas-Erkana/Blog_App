@@ -75,5 +75,3 @@ end
 
 # Used in testing to check if a specific template is rendered
 gem 'rails-controller-testing'
-
-gem 'rails_helper'

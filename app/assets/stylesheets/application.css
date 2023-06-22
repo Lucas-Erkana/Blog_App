@@ -69,6 +69,11 @@ main {
   padding: 15px 0;
 }
 
+.user-info :hover {
+  background-color: aqua;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
 .posts-counter,
 .coment-likes-data {
   font-size: 15px;
@@ -205,10 +210,10 @@ form {
 }
 
 input[type="submit"] {
-  background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  background: #ff6347; /* Coral */
+  background-image: -webkit-linear-gradient(top, #ff6347, #ff4500); /* Coral to OrangeRed */
+  background-image: -o-linear-gradient(top, #ff6347, #ff4500);
+  background-image: linear-gradient(to bottom, #ff6347, #ff4500);
   border-radius: 9px;
   -webkit-box-shadow: 0 1px 3px #666;
   -moz-box-shadow: 0 1px 3px #666;
@@ -218,7 +223,7 @@ input[type="submit"] {
   color: #fff;
   font-size: 20px;
   padding: 10px 20px 10px 20px;
-  border: solid #1f628d 4px;
+  border: solid #ff4500 4px; /* OrangeRed */
   text-decoration: none;
 }
 
@@ -269,4 +274,18 @@ textarea#post_text {
   article.user-bio {
     max-width: 80%;
   }
+}
+
+.btn-container {
+  display: flex;
+  align-items: center;
+}
+
+.button-link {
+  margin-right: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.button-link:hover {
+  background-color: aqua;
 }
