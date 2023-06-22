@@ -24,7 +24,9 @@ a {
   text-decoration: none;
   color: black;
 }
-
+a:hover {
+  background-color:gray;
+}
 main {
   width: 90%;
   min-height: 100vh;
