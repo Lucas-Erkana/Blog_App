@@ -106,6 +106,7 @@ GEM
       net-imap
       net-pop
       net-smtp
+    map (6.6.0)
     marcel (1.0.2)
     matrix (0.4.2)
     method_source (1.0.0)
@@ -160,6 +161,12 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
+    rails_current (2.2.0)
+      map (~> 6.0)
+    rails_default_url_options (6.0.0)
+    rails_helper (2.2.2)
+      rails_current (>= 1.0)
+      rails_default_url_options (>= 1.0)
     railties (7.0.5)
       actionpack (= 7.0.5)
       activesupport (= 7.0.5)
@@ -255,6 +262,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.5)
   rails-controller-testing
+  rails_helper
   rspec-rails
   rubocop (>= 1.0, < 2.0)
   selenium-webdriver
