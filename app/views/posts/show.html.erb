@@ -1,12 +1,10 @@
 <main id="post-index" class="page">
-  <%# Home Users, and Back buttons start %>
-<div id="user-page">
-  <div class="btn-container">
-    <%= link_to "Home", "../../", class: "button-link" %>
-    <%= link_to "Back", :back, class: "button-link back-link" %>
-  </div>
-</div>
-  <%# End of Home, Users and Back buttons %>
+  <div id="user-page">
+    <%# Home button start %>
+    <div class="btn-container">
+      <%= link_to "Home", "../../../"  %>
+    </div>
+    <%# End fo Home button  %>
     <div class="single-post-container">
       <%# user post start %>
       <article class="post-article">
@@ -34,13 +32,7 @@
           </div>
         </div>
         <%# Comments container start %>
-        <%
-=begin%>
-        <div class="btn-container">
-          <%= link_to "Add comment", new_user_post_comment_path(@user, @post) %>
-        </div>
-        <%
-=end%>
+        
         <ul class="comments-container">
           <%= render_all_comment(@comments)%>
         </ul>
@@ -48,3 +40,4 @@
       </div>
     </div>
   </main>
+  
