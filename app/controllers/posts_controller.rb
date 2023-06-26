@@ -8,6 +8,7 @@ class PostsController < ApplicationController
     @current_user = current_user
     @post = Post.new
   end
+
   def create
     @post = Post.new(title: post_params[:title], text: post_params[:text], user_id: current_user[:id],
                      comment_counter: 0, likes_counter: 0)
@@ -17,6 +18,7 @@ class PostsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
   def show
     @post = Post.find(params[:id])
     @user = User.find(params[:user_id])
@@ -33,4 +35,3 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :text)
   end
 end
-
