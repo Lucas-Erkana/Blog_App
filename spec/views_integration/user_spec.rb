@@ -20,7 +20,7 @@ RSpec.describe User, type: :system do
                           bio: 'Teacher from Poland.')
       visit root_path(user2)
       click_on 'Lilly'
-      page.has_content?('Lilly')
+      expect(page).to have_current_path("/users/#{user2.id}")
     end
   end
   describe 'User show page' do
@@ -64,8 +64,7 @@ RSpec.describe User, type: :system do
     it "When I click to see all posts, it redirects me to the user's post's index page." do
       visit user_path(subject.id)
       click_on 'See all posts'
-      visit user_posts_path(subject.id)
-      page.has_content?('Anna')
+      expect(page).to have_current_path("/users/#{subject.id}/posts")
     end
   end
 end
