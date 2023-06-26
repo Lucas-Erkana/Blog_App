@@ -1,11 +1,11 @@
 module PostsHelper
-  def render_few_comment(post)
+  def render_few_comment(post, user)
     content_tag(:ul, class: 'post-comments-container') do
       if post.recent_comments.any?
         post.recent_comments.each do |comment|
           concat(content_tag(:li) do
             concat(content_tag(:p) do
-              user_name = User.find_by(id: comment.user_id).name
+              user_name = user.name
               user_comment = truncate(comment.text, length: 60, omission: '...')
               "#{user_name}: #{user_comment}".html_safe
             end)
@@ -31,7 +31,7 @@ module PostsHelper
             "Comments: #{comment}, Likes: #{likes}"
           end
         end)
-        concat(render_few_comment(post))
+        concat(render_few_comment(post, user))
       end
     end
   end

@@ -44,7 +44,7 @@
 ### Key Features <a name="key-features"></a>
 
 - **Add User, Post, Like & Comment**
-- **List all User, Post, Like & Comment**
+- **List all Users, Posts, Likes & Comments**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -106,13 +106,18 @@ Install this project with:
 - LinkedIn: [Lucas Erkana](https://www.linkedin.com/in/lucas-erkana/)
 - Frontend Mentor - [@Lucash2022](https://www.frontendmentor.io/profile/Lucash2022)
 
+👤 **Saba Ahmad**
+
+- GitHub: [@SabaAhmad404](https://github.com/SabaAhmad404)
+- LinkedIn: [Saba Ahmad](https://www.linkedin.com/in/saba-ahmad-97b938244/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Add Views in App**
+- [ ] **Create Users**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
