@@ -17,7 +17,6 @@ module UsersHelper
     end
   end
 
-
   def render_post(user, post)
     link_to(user_post_path(user, post)) do
       content_tag(:div, class: 'post-container') do
@@ -34,4 +33,3 @@ module UsersHelper
     end
   end
 end
-

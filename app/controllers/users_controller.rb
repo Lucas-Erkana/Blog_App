@@ -6,7 +6,6 @@ class UsersController < ApplicationController
     @post_counter = @user.posts.length
   end
 
-
   def index
     @users = User.all
   end

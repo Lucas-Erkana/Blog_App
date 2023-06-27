@@ -14,4 +14,3 @@ class LikesController < ApplicationController
     redirect_to request.path
   end
 end
-
