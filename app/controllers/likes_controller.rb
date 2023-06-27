@@ -3,7 +3,6 @@ class LikesController < ApplicationController
     @user = User.find(params[:user_id])
     @post = Post.find(params[:post_id])
 
-
     if @user.user_has_liked?(@post, @user)
       @user.remove_user_like(@post, @user)
       puts 'Unlike'
