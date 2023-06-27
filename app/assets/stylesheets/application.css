@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  transition: all 0.2s linear;
 }
 
 body {
@@ -23,6 +24,11 @@ h1 {
 a {
   text-decoration: none;
   color: black;
+}
+
+img[alt] {
+  font-weight: normal;
+  font-size: 13px;
 }
 
 main {
@@ -69,11 +75,6 @@ main {
   padding: 15px 0;
 }
 
-.user-info :hover {
-  background-color: aqua;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-}
-
 .posts-counter,
 .coment-likes-data {
   font-size: 15px;
@@ -87,8 +88,7 @@ main {
   display: inline-block;
   color: #1f628d;
   padding: 3px;
-  margin-top: 20px;
-  margin-bottom: 0;
+  margin: 20px 0;
   font-size: 22px;
   text-decoration: underline;
 }
@@ -190,30 +190,30 @@ h2.title {
   justify-content: space-between;
 }
 
-label {
-  display: none;
-}
-
 textarea#comment_text,
 textarea#post_text {
   display: block;
   width: 100%;
   height: 200px;
-  padding: 10px;
+  padding: 10px 5px;
+  resize: none;
+  overflow: hidden;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
+.actions {
+  text-align: center;
 }
 
 input[type="submit"] {
-  background: #ff6347; /* Coral */
-  background-image: -webkit-linear-gradient(top, #ff6347, #ff4500); /* Coral to OrangeRed */
-  background-image: -o-linear-gradient(top, #ff6347, #ff4500);
-  background-image: linear-gradient(to bottom, #ff6347, #ff4500);
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #db344d, #b92929);
+  background-image: -o-linear-gradient(top, #db3434, #b92957);
+  background-image: linear-gradient(to bottom, #db3455, #b92929);
   border-radius: 9px;
   -webkit-box-shadow: 0 1px 3px #666;
   -moz-box-shadow: 0 1px 3px #666;
@@ -223,8 +223,10 @@ input[type="submit"] {
   color: #fff;
   font-size: 20px;
   padding: 10px 20px 10px 20px;
-  border: solid #ff4500 4px; /* OrangeRed */
+  border: solid #1f628d 4px;
   text-decoration: none;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
 input[type="submit"]:hover {
@@ -237,16 +239,55 @@ input[type="submit"]:hover {
   flex-direction: column;
 }
 
+label:not([for^="user_remember_me"]) {
+  display: none;
+}
+
+label[for="user_remember_me"] {
+  font-size: 18px;
+}
+
+em.info {
+  font-size: 15px;
+}
+
 input[type="text"],
-textarea#post_text {
-  padding: 10px;
+input[type="email"],
+input[type="password"] {
+  padding: 8px 5px 12px;
   resize: none;
-  overflow: auto;
+  overflow: hidden;
   outline: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
+  border: none;
+  border-bottom: 2px solid #666;
+  width: 100%;
+}
+
+input[type="checkbox"] {
+  background-color: #3498db;
+  cursor: pointer;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-bottom: 3px solid #3498db;
+}
+
+.notice,
+.alert {
+  font-size: 16px;
+  font-weight: normal;
+  color: #3498db;
+}
+
+form,
+#form-page form,
+#post-form-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
 }
 
 #form-page {
@@ -257,6 +298,50 @@ textarea#post_text {
   max-width: 600px;
 }
 
+h2.form-title {
+  text-align: center;
+  margin: 10px 0 20px;
+}
+
+.shared-links a {
+  display: block;
+  color: #666;
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+.shared-links {
+  display: flex;
+  width: 100%;
+  flex-direction: row-reverse;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 12px;
+}
+
+.shared-links a:hover {
+  color: #3498db;
+  letter-spacing: 2px;
+  text-decoration: underline;
+}
+
+#log-in-page a {
+  color: rgb(255, 0, 242);
+  font-size: 16px;
+  text-decoration: none;
+  display: block;
+  flex: 1;
+  letter-spacing: normal;
+}
+
+#log-in-page a:hover {
+  text-decoration: underline;
+}
+
+.shared-links.sign-up {
+  display: block;
+}
+
 /* like and comment styles end */
 
 @media (min-width: 765px) {
@@ -265,6 +350,14 @@ textarea#post_text {
     margin: auto;
     margin-bottom: 30px;
     margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  main div.page {
+    width: 100%;
   }
 
   h3 a:hover {
@@ -274,18 +367,20 @@ textarea#post_text {
   article.user-bio {
     max-width: 80%;
   }
-}
 
-.btn-container {
-  display: flex;
-  align-items: center;
-}
+  #log-in-page {
+    width: 410px;
+  }
 
-.button-link {
-  margin-right: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.button-link:hover {
-  background-color: aqua;
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    padding: 8px 10px 12px;
+    resize: none;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #666;
+    width: 100%;
+  }
 }

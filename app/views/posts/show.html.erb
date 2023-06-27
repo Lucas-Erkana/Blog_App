@@ -1,4 +1,4 @@
-<main id="post-index" class="page">
+<div id="post-index" class="page">
   <div id="user-page">
     <%# Home button start %>
     <div class="btn-container">
@@ -22,8 +22,9 @@
         </article>
         <%# End of user post %>
         <div class="interaction">
-          <%= form_with(model: @like, url: user_post_likes_path(@user, @post), method: :post, remote: false) do |form| %>
+          <%= form_with(model: @like, url: user_post_likes_path(@user, @post), method: :post) do |form| %>
             <div class="add-coment-btn">
+              <%= form.hidden_field :post_id, value: @post.id %>
               <%= form.submit "Like" %>
             </div>
           <% end %>
@@ -39,5 +40,4 @@
         <%# End of Comments container  %>
       </div>
     </div>
-  </main>
-  
+  </div>

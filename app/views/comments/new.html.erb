@@ -3,7 +3,7 @@
     <h1>Add a comment</h1>
     <%= form_with(model: @comment, url: user_post_comments_path, method: :post) do |f| %>
       <%= f.label :text %>
-      <%= f.text_area :text, resize: "none", required: true, placeholder: "Enter comment"  %>
+      <%= f.text_area :text, autofocus: true, resize: "none", required: true, placeholder: "Enter comment"  %>
       <%= f.submit "Add" %>
     <% end %>
   </div>
