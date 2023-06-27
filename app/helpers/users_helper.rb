@@ -3,7 +3,7 @@ module UsersHelper
     content_tag(:li, class: 'user-container') do
       concat(content_tag(:div, class: 'user-profile-pic') do
         link_to(user_path(user)) do
-          image_tag(user.photo, alt: 'profile-picture')
+          image_tag(user.photo || '', alt: 'profile-picture')
         end
       end)
       concat(content_tag(:div, class: 'user-info') do

@@ -1,22 +1,9 @@
-<main class="page" id="post-form-page" >
-  <%# Home Users, and Back buttons start %>
-  <div id="user-page">
-    <div class="btn-container">
-      <%= link_to "Home", "../../" %>
-      <div class="back-link-container">
-        <%= link_to "Back", :back, class: "back-link" %>
-      </div>
-          <div class="users-link-container">
-      <%= link_to "Users", users_path, class: "users-link" %>
-    </div>
-    </div>
-  </div>
-  <%# End of Home, Users and Back buttons %>
+<div class="page" id="post-form-page" >
     <h1>Create New Post</h1>
     <%= form_with(model: @post, url:  user_create_post_path, method: :post, remote: false ) do |f| %>
       <div class="post-inputs">
         <%= f.label :title %>
-        <%= f.text_field :title, required: true, pattern: ".{5,}", title: "Title must be at least 5 characters", placeholder: "Enter Post Title"  %>
+        <%= f.text_field :title, required: true, autofocus: true,  pattern: ".{5,}", title: "Title must be at least 5 characters", placeholder: "Enter Post Title"  %>
       </div>
       <div class="post-inputs">
         <%= f.label :text  %>
@@ -24,4 +11,4 @@
       </div>
         <%= f.submit "Create Post" %>
     <% end %>
-  </main>
+</div>
