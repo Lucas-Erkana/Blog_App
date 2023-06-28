@@ -45,7 +45,10 @@
 
 - **Add User, Post, Like & Comment**
 - **List all Users, Posts, Likes & Comments**
-
+- **Sign up**
+- **Log in**
+- **Reset Password**
+- 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
