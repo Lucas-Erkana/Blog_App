@@ -45,9 +45,6 @@
 
 - **Add User, Post, Like & Comment**
 - **List all Users, Posts, Likes & Comments**
-- **Sign up**
-- **Log in**
-- **Reset Password**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -65,8 +62,9 @@ In order to run this project you need:
 - Mac or PC
 - Code Editor (Vs Code)
 - Terminal
-- Install [ruby](https://www.ruby-lang.org/en/documentation/installation/) on your computer
+- Install [ruby 3.2.2](https://www.ruby-lang.org/en/documentation/installation/) on your computer
 - Install [rails](https://www.tutorialspoint.com/ruby-on-rails/rails-installation.htm#) on your computer
+- Install [postgreSQL](https://www.postgresql.org/download/) on your computer
 
 ### Setup
 
@@ -88,7 +86,16 @@ Install this project with:
 
 ### Usage
 
+- Run `bundle install` in the terminal from the root folder of the project.
+- Run `rails db:create` in the terminal from the root folder of the project.
+- Run `rails db:migrate` in the terminal from the root folder of the project.
 - Run the app with `rails c` in the terminal from the root folder of the project.
+- Create a new user
+```sh
+User.create(name: 'Lucas', bio: 'Full stack developer from Namibia', photo: 'https://ca.slack-edge.com/T47CT8XPG-U03PBVD9PAS-26c072588661-512', posts_counter: 0)
+```
+- Run the server with `rails s` in the terminal from the root folder of the project.
+
 
 ### Test
 
