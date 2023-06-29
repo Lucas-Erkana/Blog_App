@@ -2,17 +2,29 @@
   <div id="user-page">
     <%# Home button start %>
     <div class="btn-container">
-      <%= link_to "Home", "../../../"  %>
+      <%= link_to raw('<i class="fa-solid fa-house"></i>'), "../../" %>
     </div>
     <%# End fo Home button  %>
     <div class="single-post-container">
       <%# user post start %>
       <article class="post-article">
         <div class="info">
+          <section class="flex">
+            <div>
+              <h2 class="title"><%= @post.title %></h2>
+              <p class="user-name">by <%= @user.name %></p>
+            </div>
+            <%# Delete post btn%>
+            <div>
+              <% if can? :destroy, @post %>
+              <%= button_to user_post_path(@user, @post), method: :delete, data: { confirm: 'Are you sure?' }, id: 'dell-post-btn' do %>
+                <%= hidden_field_tag :id, @post.id %>
+                <%= submit_tag 'delete post'%>
+              <% end %>
+            <% end %>
+            </section>
+            <%# End of Delete post btn%>
           <div>
-            <h2 class="title"><%= @post.title %></h2>
-            <p class="user-name">by <%= @user.name %></p>
-          </div>
           <p class="posts-counter">
             Comment: <%= @post.comment_counter || 0 %>, Likes: <%= @post.likes_counter || 0 %>
           </div>
@@ -28,14 +40,19 @@
               <%= form.submit "Like" %>
             </div>
           <% end %>
+
+
+          <%# %>
+          <%# Create comment button %>
           <div class="btn-container">
             <%= link_to "Add comment", new_user_post_comment_path(@user, @post) %>
           </div>
+          <%# End of Create comment button %>
         </div>
+       
         <%# Comments container start %>
-        
         <ul class="comments-container">
-          <%= render_all_comment(@comments)%>
+          <%= render_all_comment(@user, @post, @post.comments) %>
         </ul>
         <%# End of Comments container  %>
       </div>
