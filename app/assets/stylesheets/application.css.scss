@@ -8,9 +8,14 @@
   transition: all 0.2s linear;
 }
 
+
+@import "font-awesome";
+
+
 body {
   display: flex;
 }
+
 
 h1 {
   font-size: 30px;
@@ -21,15 +26,18 @@ h1 {
   text-decoration: underline;
 }
 
+
 a {
   text-decoration: none;
   color: black;
 }
 
+
 img[alt] {
   font-weight: normal;
   font-size: 13px;
 }
+
 
 main {
   width: 90%;
@@ -39,16 +47,19 @@ main {
   margin-top: 20px;
 }
 
+
 .users-list {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
+
 .user-container {
   display: flex;
   gap: 15px;
 }
+
 
 .user-container,
 .post-container {
@@ -56,16 +67,19 @@ main {
   padding-bottom: 20px;
 }
 
+
 .user-profile-pic {
   width: 100px;
   height: 100px;
   overflow: hidden;
 }
 
+
 .user-profile-pic img {
   width: 100%;
   height: 100%;
 }
+
 
 .user-info {
   width: 80%;
@@ -74,6 +88,7 @@ main {
   justify-content: space-between;
   padding: 15px 0;
 }
+
 
 .posts-counter,
 .coment-likes-data {
@@ -84,6 +99,7 @@ main {
   color: gray;
 }
 
+
 .btn-container a {
   display: inline-block;
   color: #1f628d;
@@ -93,6 +109,7 @@ main {
   text-decoration: underline;
 }
 
+
 article.user-bio {
   border: 1px dotted gray;
   margin: 20px 0 40px;
@@ -101,55 +118,69 @@ article.user-bio {
   line-height: 1.3;
 }
 
+
 .user-bio h3 {
   font-size: 18px;
   margin-bottom: 20px;
 }
 
+
 .user-bio .bio {
   font-size: 19px;
 }
 
+
 .post-container {
   margin-bottom: 20px;
 }
+
 
 .post-title {
   font-size: 20px;
   margin-bottom: 20px;
 }
 
+
 .post-details .details {
   font-size: 18px;
   margin-bottom: 5px;
 }
+
 
 .btn-container.see-posts {
   display: flex;
   justify-content: center;
 }
 
+
 .user-container.posts {
   margin-bottom: 20px;
 }
+
 
 h2.title {
   font-size: 30px;
 }
 
+
 .user-name {
   font-size: 19px;
   margin-bottom: 10px;
-  color: rgb(210, 57, 57);
+  color: #1f628d;
+  font-style: italic;
 }
+
 
 .post-body {
   margin-top: 20px;
 }
 
+
 .post-body p {
   line-height: 1.5;
+  font-size: 20px;
 }
+
 
 .comments-container,
 .post-comments-container {
@@ -161,16 +192,19 @@ h2.title {
   padding: 8px 0;
 }
 
+
 .posts-container {
   display: flex;
   flex-direction: column;
   gap: 45px;
 }
 
+
 .coment-likes-data.container {
   border-bottom: 1px solid gray;
   padding-bottom: 8px;
 }
+
 
 .post-comments-container li,
 .comments-container li {
@@ -179,16 +213,20 @@ h2.title {
   padding: 0 15px;
 }
 
+
 .post-comments-container li:nth-child(even) p {
   border-top: 1px dotted rgba(0, 0, 0, 0.1);
 }
 
+
 /* like and comment styles */
+
 
 .interaction {
   display: flex;
   justify-content: space-between;
 }
+
 
 textarea#comment_text,
 textarea#post_text {
@@ -205,14 +243,16 @@ textarea#post_text {
   border-radius: 15px;
 }
 
+
 .actions {
   text-align: center;
 }
 
-input[type="submit"] {
+
+input[type="submit"]:not([value="delete post"]) {
   background: #3498db;
-  background-image: -webkit-linear-gradient(top, #db344d, #b92929);
-  background-image: -o-linear-gradient(top, #db3434, #b92957);
+  background-image: -webkit-linear-gradient(top, #db3434, #ab1212);
+  background-image: -o-linear-gradient(top, #db3434, #b92929);
   background-image: linear-gradient(to bottom, #db3455, #b92929);
   border-radius: 9px;
   -webkit-box-shadow: 0 1px 3px #666;
@@ -229,27 +269,57 @@ input[type="submit"] {
   margin-top: 20px;
 }
 
-input[type="submit"]:hover {
-  background: #3cb0fd;
+
+#dell-post-btn {
+  border: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+#dell-post-btn input {
+  border: none;
+  color: red;
+  font-weight: normal;
+  cursor: pointer;
+  font-style: italic;
+  transition: all 0.2s ease-in;
+  font-size: 15px;
+}
+
+
+#dell-post-btn input:hover {
+  text-decoration: underline;
+  letter-spacing: 1px;
+}
+
+
+input[type="submit"]:not([value="delete post"]):hover {
+  background: #5c3cfd;
   text-decoration: none;
 }
+
 
 .post-inputs {
   display: flex;
   flex-direction: column;
 }
 
+
 label:not([for^="user_remember_me"]) {
   display: none;
 }
+
 
 label[for="user_remember_me"] {
   font-size: 18px;
 }
 
+
 em.info {
   font-size: 15px;
 }
+
 
 input[type="text"],
 input[type="email"],
@@ -263,10 +333,12 @@ input[type="password"] {
   width: 100%;
 }
 
+
 input[type="checkbox"] {
   background-color: #3498db;
   cursor: pointer;
 }
+
 
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -274,12 +346,14 @@ input[type="password"]:focus {
   border-bottom: 3px solid #3498db;
 }
 
+
 .notice,
 .alert {
   font-size: 16px;
   font-weight: normal;
   color: #3498db;
 }
+
 
 form,
 #form-page form,
@@ -290,18 +364,22 @@ form,
   gap: 20px;
 }
 
+
 #form-page {
   max-width: 400px;
 }
+
 
 #post-form-page {
   max-width: 600px;
 }
 
+
 h2.form-title {
   text-align: center;
   margin: 10px 0 20px;
 }
+
 
 .shared-links a {
   display: block;
@@ -309,6 +387,7 @@ h2.form-title {
   text-decoration: underline;
   font-weight: normal;
 }
+
 
 .shared-links {
   display: flex;
@@ -319,14 +398,16 @@ h2.form-title {
   gap: 12px;
 }
 
+
 .shared-links a:hover {
   color: #3498db;
   letter-spacing: 2px;
   text-decoration: underline;
 }
 
+
 #log-in-page a {
-  color: rgb(255, 0, 242);
+  color: rgb(10, 21, 81);
   font-size: 16px;
   text-decoration: none;
   display: block;
@@ -334,16 +415,104 @@ h2.form-title {
   letter-spacing: normal;
 }
 
+
 #log-in-page a:hover {
   text-decoration: underline;
+  background-color: #435059;
+  color: whitesmoke;
 }
+
 
 .shared-links.sign-up {
   display: block;
 }
 
+
+section.flex {
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+  overflow: hidden;
+}
+
+
+section.flex div:nth-child(odd) {
+  position: relative;
+  top: 10px;
+}
+
+
+li.comment-box {
+  gap: 30px;
+  align-items: center;
+}
+
+
+li.comment-box form button {
+  border: none;
+}
+
+
+li.comment-box form .del-post-btn #delete {
+  border: none;
+  background: none;
+  background-image: inherit;
+  background-color: inherit;
+  color: rgb(250, 158, 158);
+  font-weight: normal;
+  letter-spacing: 2px;
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  outline: none;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  position: relative;
+  left: 3.5rem;
+  bottom: 5px;
+}
+
+
+li.comment-box form .del-post-btn #delete:hover {
+  color: red;
+  font-weight: bolder;
+}
+
+
 /* like and comment styles end */
 
+
+/* sign out button*/
+
+
+.signout-container {
+  text-align: center;
+  margin-top: 20px;
+  border-color:gray;
+  border-style: solid;
+  border-width: 2px 2px 2px 2px;
+  margin-left: 92%;
+  border-radius: 25px;
+}
+
+
+.signout-container a {
+  color: #1f628d;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+
+.signout-container a:hover {
+    text-decoration: underline;
+    background-color: #435059;
+    color: whitesmoke;
+}
+
+
+/* sign out button ends*/
 @media (min-width: 765px) {
   main {
     width: 70%;
@@ -356,21 +525,26 @@ h2.form-title {
     flex-direction: column;
   }
 
+
   main div.page {
     width: 100%;
   }
+
 
   h3 a:hover {
     text-decoration: underline;
   }
 
+
   article.user-bio {
     max-width: 80%;
   }
 
+
   #log-in-page {
     width: 410px;
   }
+
 
   input[type="text"],
   input[type="email"],
@@ -383,4 +557,23 @@ h2.form-title {
     border-bottom: 2px solid #666;
     width: 100%;
   }
+
+
+  li.comment-box {
+    display: flex;
+  }
+
+
+  li.comment-box form .del-post-btn #delete {
+    position: relative;
+    left: 0;
+    bottom: 0;
+  }
+
+
+  .post-body p {
+    line-height: 1.5;
+  }
 }
+
+
