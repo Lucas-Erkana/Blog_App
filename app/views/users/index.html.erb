@@ -3,16 +3,14 @@
     <div class="btn-container">
       <%= link_to raw('<i class="fas fa-house"></i>'), root_path %>
     </div>
-        <div class="signout-container">
-  <%= link_to "Sign out", root_path, method: :delete, class: "signout-link" %>
-</div>
-    <h1>Users <i class="fa-solid fa-users"></i></h1>
+    <div class="signout-container">
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "signout-link" %>
+    </div>
+    <h1>Welcome <span class='current-user'><%= current_user.name %>!</span> <i class="fa-solid fa-users"></i></h1>
+
 
     <ul class="users-list">
       <%= @users.map { |user| render_user(user) }.join.html_safe %>
     </ul>
-
-
-
   </div>
 </div>
