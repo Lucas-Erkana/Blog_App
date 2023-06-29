@@ -74,6 +74,7 @@ GEM
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    cancancan (1.17.0)
     capybara (3.39.2)
       addressable
       matrix
@@ -94,6 +95,9 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
     erubi (1.12.0)
+    ffi (1.15.5)
+    font-awesome-sass (6.4.0)
+      sassc (~> 2.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.14.1)
@@ -215,6 +219,8 @@ GEM
       parser (>= 3.2.1.0)
     ruby-progressbar (1.13.0)
     rubyzip (2.3.2)
+    sassc (2.4.0)
+      ffi (~> 1.9)
     selenium-webdriver (4.10.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -263,8 +269,10 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  cancancan (~> 1.9)
   capybara
   devise
+  font-awesome-sass (~> 6.4.0)
   importmap-rails
   jbuilder
   pg
@@ -273,6 +281,7 @@ DEPENDENCIES
   rails-controller-testing
   rspec-rails
   rubocop (>= 1.0, < 2.0)
+  sassc
   selenium-webdriver
   sprockets-rails
   stimulus-rails

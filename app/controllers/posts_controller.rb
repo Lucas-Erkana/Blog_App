@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts
@@ -26,11 +28,21 @@ class PostsController < ApplicationController
     @comments = Comment.where(post_id: params[:id])
   end
 
+  def destroy
+    @post = current_user.posts.find(params[:id])
+    @post.destroy
+    redirect_to user_posts_path(current_user, @post), notice: 'Post was successfully destroyed.'
+  end
+
   def include_user
     @user = User.includes(:posts, posts: [:comments, { comments: [:author] }]).find(params[:user_id])
   end
 
   private
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
   def post_params
     params.require(:post).permit(:title, :text)

@@ -1,13 +1,24 @@
 module PostsHelper
+  def render_comment_delete_button(user, post, comment)
+    button_to user_post_comment_path(user, post, comment),
+              method: :delete,
+              data: { confirm: 'Are you sure?' },
+              class: 'del-post-btn' do
+      submit_tag '|Delete', title: 'delete comment', id: 'delete'
+    end
+  end
+
   def render_few_comment(post, user)
     content_tag(:ul, class: 'post-comments-container') do
       if post.recent_comments.any?
         post.recent_comments.each do |comment|
-          concat(content_tag(:li) do
+          concat(content_tag(:li, class: 'comment-box') do
             concat(content_tag(:p) do
-              user_name = user.name
+              user_name = comment.user.name
               user_comment = truncate(comment.text, length: 60, omission: '...')
-              "#{user_name}: #{user_comment}".html_safe
+              comment_content = "#{user_name}: #{user_comment}".html_safe
+              concat(comment_content)
+              concat(render_comment_delete_button(user, post, comment)) if can? :destroy, comment
             end)
           end)
         end
@@ -36,14 +47,16 @@ module PostsHelper
     end
   end
 
-  def render_all_comment(comments)
+  def render_all_comment(user, post, comments)
     if comments.any?
       safe_join(comments.map do |comment|
-        content_tag(:li) do
+        content_tag(:li, class: 'comment-box') do
           content_tag(:p) do
             user_name = User.find_by(id: comment.user_id)&.name
             user_comment = comment.text
-            "#{user_name}: #{user_comment}".html_safe
+            comment_content = "#{user_name}: #{user_comment}".html_safe
+            concat(comment_content)
+            concat(render_comment_delete_button(user, post, comment)) if can? :destroy, comment
           end
         end
       end)

@@ -1,6 +1,18 @@
 <div id="home" class="page">
-  <h1>Users</h1>
-  <ul class="users-list">
-    <%= @users.map { |user| render_user(user) }.join.html_safe %>
-  </ul>
+  <div id="user-page">
+    <div class="btn-container">
+      <%= link_to raw('<i class="fas fa-house"></i>'), root_path %>
+    </div>
+        <div class="signout-container">
+  <%= link_to "Sign out", root_path, method: :delete, class: "signout-link" %>
+</div>
+    <h1>Users <i class="fa-solid fa-users"></i></h1>
+
+    <ul class="users-list">
+      <%= @users.map { |user| render_user(user) }.join.html_safe %>
+    </ul>
+
+
+
+  </div>
 </div>

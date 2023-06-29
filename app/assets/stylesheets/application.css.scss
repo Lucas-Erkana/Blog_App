@@ -8,6 +8,8 @@
   transition: all 0.2s linear;
 }
 
+@import "font-awesome";
+
 body {
   display: flex;
 }
@@ -140,7 +142,8 @@ h2.title {
 .user-name {
   font-size: 19px;
   margin-bottom: 10px;
-  color: rgb(210, 57, 57);
+  color: #1f628d;
+  font-style: italic;
 }
 
 .post-body {
@@ -149,6 +152,7 @@ h2.title {
 
 .post-body p {
   line-height: 1.5;
+  font-size: 20px;
 }
 
 .comments-container,
@@ -209,10 +213,10 @@ textarea#post_text {
   text-align: center;
 }
 
-input[type="submit"] {
+input[type="submit"]:not([value="delete post"]) {
   background: #3498db;
-  background-image: -webkit-linear-gradient(top, #db344d, #b92929);
-  background-image: -o-linear-gradient(top, #db3434, #b92957);
+  background-image: -webkit-linear-gradient(top, #db3434, #ab1212);
+  background-image: -o-linear-gradient(top, #db3434, #b92929);
   background-image: linear-gradient(to bottom, #db3455, #b92929);
   border-radius: 9px;
   -webkit-box-shadow: 0 1px 3px #666;
@@ -229,8 +233,29 @@ input[type="submit"] {
   margin-top: 20px;
 }
 
-input[type="submit"]:hover {
-  background: #3cb0fd;
+#dell-post-btn {
+  border: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#dell-post-btn input {
+  border: none;
+  color: red;
+  font-weight: normal;
+  cursor: pointer;
+  font-style: italic;
+  transition: all 0.2s ease-in;
+  font-size: 15px;
+}
+
+#dell-post-btn input:hover {
+  text-decoration: underline;
+  letter-spacing: 1px;
+}
+
+input[type="submit"]:not([value="delete post"]):hover {
+  background: #5c3cfd;
   text-decoration: none;
 }
 
@@ -319,14 +344,39 @@ h2.form-title {
   gap: 12px;
 }
 
+.signout-container a {
+  color: #1f628d;
+  text-decoration: none;
+  font-size: 20px;
+}
+
 .shared-links a:hover {
   color: #3498db;
   letter-spacing: 2px;
   text-decoration: underline;
 }
 
+/* sign out button */
+.signout-container {
+  text-align: center;
+  margin-top: 20px;
+  border-color: gray;
+  border-style: solid;
+  border-width: 2px 2px 2px 2px;
+  margin-left: 92%;
+  border-radius: 25px;
+}
+
+.signout-container a:hover {
+  text-decoration: underline;
+  background-color: #435059;
+  color: whitesmoke;
+}
+
+/* sign out button ends */
+
 #log-in-page a {
-  color: rgb(255, 0, 242);
+  color: rgb(10, 21, 81);
   font-size: 16px;
   text-decoration: none;
   display: block;
@@ -336,13 +386,67 @@ h2.form-title {
 
 #log-in-page a:hover {
   text-decoration: underline;
+  background-color: #435059;
+  color: whitesmoke;
 }
 
 .shared-links.sign-up {
   display: block;
 }
 
+section.flex {
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+  overflow: hidden;
+}
+
+section.flex div:nth-child(odd) {
+  position: relative;
+  top: 10px;
+}
+
+li.comment-box {
+  gap: 30px;
+  align-items: center;
+}
+
+li.comment-box form button {
+  border: none;
+}
+
+li.comment-box form .del-post-btn #delete {
+  border: none;
+  background: none;
+  background-image: inherit;
+  background-color: inherit;
+  color: rgb(250, 158, 158);
+  font-weight: normal;
+  letter-spacing: 2px;
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  outline: none;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  position: relative;
+  left: 3.5rem;
+  bottom: 5px;
+}
+
+li.comment-box form .del-post-btn #delete:hover {
+  color: red;
+  font-weight: bolder;
+}
+
 /* like and comment styles end */
+
+.form-size {
+  width: 100%;
+  max-width: 600px; /* Adjust the width as needed */
+}
 
 @media (min-width: 765px) {
   main {
@@ -382,5 +486,19 @@ h2.form-title {
     border: none;
     border-bottom: 2px solid #666;
     width: 100%;
+  }
+
+  li.comment-box {
+    display: flex;
+  }
+
+  li.comment-box form .del-post-btn #delete {
+    position: relative;
+    left: 0;
+    bottom: 0;
+  }
+
+  .post-body p {
+    line-height: 1.5;
   }
 }
