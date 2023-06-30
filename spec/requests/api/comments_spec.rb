@@ -6,12 +6,10 @@ RSpec.describe 'api/comment', type: :request do
     parameter name: 'user_id', in: :path, type: :string, description: 'user_id'
     parameter name: 'post_id', in: :path, type: :string, description: 'post_id'
 
-
     get('list comments') do
       response(200, 'successful') do
         let(:user_id) { '123' }
         let(:post_id) { '123' }
-
 
         after do |example|
           example.metadata[:response][:content] = {
@@ -25,11 +23,9 @@ RSpec.describe 'api/comment', type: :request do
     end
   end
 
-
   path '/api/posts/{post_id}/comments' do
     # You'll want to customize the parameter types...
     parameter name: 'post_id', in: :path, type: :string, description: 'post_id'
-
 
     post 'Creates a comments' do
       tags 'Comments'
@@ -42,12 +38,10 @@ RSpec.describe 'api/comment', type: :request do
         required: ['text']
       }
 
-
       response '201', 'Comments created' do
         let(:comment) { { text: 'Hi there' } }
         run_test!
       end
-
 
       response '422', 'invalid request' do
         let(:pet) { { text: 'foo' } }

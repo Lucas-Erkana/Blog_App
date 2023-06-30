@@ -1,9 +1,7 @@
 require 'swagger_helper'
 
-
 RSpec.describe 'api/my', type: :request do
   # spec/requests/blogs_spec.rb
-
 
   describe 'Blogs API' do
     path '/blogs' do
@@ -19,12 +17,10 @@ RSpec.describe 'api/my', type: :request do
           required: %w[title content]
         }
 
-
         response '201', 'blog created' do
           let(:blog) { { title: 'foo', content: 'bar' } }
           run_test!
         end
-
 
         response '422', 'invalid request' do
           let(:blog) { { title: 'foo' } }
@@ -33,14 +29,12 @@ RSpec.describe 'api/my', type: :request do
       end
     end
 
-
     path '/blogs/{id}' do
       get 'Retrieves a blog' do
         tags 'Blogs', 'Another Tag'
         produces 'application/json', 'application/xml'
         parameter name: :id, in: :path, type: :string
         request_body_example value: { some_field: 'Foo' }, name: 'basic', summary: 'Request example description'
-
 
         response '200', 'blog found' do
           schema type: :object,
@@ -56,12 +50,10 @@ RSpec.describe 'api/my', type: :request do
           run_test!
         end
 
-
         response '404', 'blog not found' do
           let(:id) { 'invalid' }
           run_test!
         end
-
 
         response '406', 'unsupported accept header' do
           let(:Accept) { 'application/foo' }
