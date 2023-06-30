@@ -109,6 +109,8 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.6.3)
+    json-schema (3.0.0)
+      addressable (>= 2.8)
     language_server-protocol (3.17.0.3)
     loofah (2.21.3)
       crass (~> 1.0.2)
@@ -136,11 +138,14 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.15.2-x64-mingw-ucrt)
       racc (~> 1.4)
+    nokogiri (1.15.2-x86_64-linux)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.23.0)
     parser (3.2.2.3)
       ast (~> 2.4.1)
       racc
+    pg (1.5.3)
     pg (1.5.3-x64-mingw-ucrt)
     public_suffix (5.0.1)
     puma (5.6.6)
@@ -204,6 +209,20 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.1)
+    rswag (2.9.0)
+      rswag-api (= 2.9.0)
+      rswag-specs (= 2.9.0)
+      rswag-ui (= 2.9.0)
+    rswag-api (2.9.0)
+      railties (>= 3.1, < 7.1)
+    rswag-specs (2.9.0)
+      activesupport (>= 3.1, < 7.1)
+      json-schema (>= 2.2, < 4.0)
+      railties (>= 3.1, < 7.1)
+      rspec-core (>= 2.14)
+    rswag-ui (2.9.0)
+      actionpack (>= 3.1, < 7.1)
+      railties (>= 3.1, < 7.1)
     rubocop (1.53.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -266,6 +285,7 @@ GEM
 
 PLATFORMS
   x64-mingw-ucrt
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
@@ -280,6 +300,7 @@ DEPENDENCIES
   rails (~> 7.0.5)
   rails-controller-testing
   rspec-rails
+  rswag
   rubocop (>= 1.0, < 2.0)
   sassc
   selenium-webdriver
