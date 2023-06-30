@@ -45,7 +45,6 @@ RSpec.describe 'api/my', type: :request do
                  },
                  required: %w[id title content]
 
-
           let(:id) { Blog.create(title: 'foo', content: 'bar').id }
           run_test!
         end
